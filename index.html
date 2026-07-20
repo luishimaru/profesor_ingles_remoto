@@ -295,48 +295,22 @@ section.block{padding:74px 0}
 .btn-ghost-x{font:600 13.5px 'Poppins';border:1.5px solid var(--line);background:var(--cream-2);color:var(--deep2);padding:0 16px;height:42px;border-radius:11px;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:6px}
 .btn-ghost-x:hover{border-color:var(--brand);color:var(--brand)}
 @media print{.phr__btn,.note-add,#cuaderno .notes li .x,.tts-ctrl,.dash,.cert-cta,.free{display:none}}
-/* --- Plan grano a grano --- */
-.plan{margin-top:8px}
-.plan__top{max-width:680px;margin:0 auto 26px}
-.plan__prog{height:10px;background:var(--cream);border:1px solid var(--line);border-radius:999px;overflow:hidden;margin-bottom:8px}
-.plan__bar{height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--gold));border-radius:999px;transition:width .4s}
-.plan__lbl{font:600 13.5px 'Poppins';color:var(--mute);text-align:center}
-.days{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:14px}
-.day{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:.18s}
-.day:hover{transform:translateY(-2px);border-color:var(--green-l)}
-.day.done{background:var(--cream-2);border-color:var(--green-l)}
-.day__n{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:10px;background:var(--deep2);color:var(--cream);font:700 14px 'Poppins';margin-bottom:10px}
-.day.done .day__n{background:var(--green)}
-.day__min{display:inline-block;font:600 11px 'Poppins';letter-spacing:.04em;color:var(--gold-d);margin-bottom:6px}
-.day__t{font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--deep2);line-height:1.25;margin-bottom:6px}
-.day__d{font-size:13.5px;color:var(--mute);line-height:1.5;margin-bottom:14px;flex:1}
-.day__row{display:flex;gap:9px;align-items:center;margin-top:auto}
-.day__go{flex:1;text-align:center;text-decoration:none;font:600 13px 'Poppins';color:var(--brand);border:1.5px solid var(--line);border-radius:11px;padding:9px 0;transition:.15s}
-.day__go:hover{border-color:var(--brand);background:var(--cream-2)}
-.day__chk{display:inline-flex;align-items:center;gap:7px;cursor:pointer;font:600 13px 'Poppins';color:var(--mute);user-select:none}
-.day__box{width:22px;height:22px;border:2px solid var(--line);border-radius:7px;background:#fff;display:inline-flex;align-items:center;justify-content:center;transition:.15s;flex:0 0 auto}
-.day.done .day__box{background:var(--green);border-color:var(--green)}
-.day.done .day__box::after{content:"\2713";color:#fff;font-size:13px;font-weight:700}
-.day.done .day__chk{color:var(--green)}
-.plan__done{max-width:640px;margin:26px auto 0;background:var(--cream-2);border:1px solid var(--gold-l);border-left:4px solid var(--gold);border-radius:14px;padding:16px 18px;font-size:14.5px;line-height:1.55;color:var(--ink);display:none}
-/* --- feedback de pronunciación palabra a palabra --- */
-.wfb{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.wfb span{font:600 13px 'Poppins';padding:3px 9px;border-radius:8px;border:1px solid var(--line)}
-.wfb .ok{color:var(--brand);background:var(--cream-2);border-color:var(--green-l)}
-.wfb .miss{color:var(--gold-d);background:#fff;border-style:dashed;border-color:var(--gold-l)}
 </style>
 </head>
 <body>
+<div style="background:#1e150c;border-bottom:3px solid #c2912e;color:#fbf5e7;font-family:'Poppins',system-ui,-apple-system,sans-serif;padding:11px 18px;text-align:center;font-size:13px;line-height:1.55">
+  <strong style="color:#e6b84a;letter-spacing:.05em">&#9888; MATERIAL CONFIDENCIAL &middot; PROGRAMA GRANO DE ORO</strong><br>
+  Todo este material es <strong>confidencial</strong>. Queda prohibido <strong>compartirlo, distribuirlo o utilizarlo</strong> por personas ajenas no inscritas en el programa <strong>Grano de Oro</strong>. Uso exclusivamente personal.
+</div>
 <nav class="nav"><div class="nav__in">
   <a class="nav__brand" href="https://www.youtube.com/@DeGranoEnGrano" target="_blank" rel="noopener"><span class="brandmark"></span> De Grano En Grano</a>
   <div class="nav__links">
-    <a href="#plan">Tu plan</a>
     <a href="#nivel">Test de nivel</a>
     <a href="#prompts">Profesor IA</a>
+    <a href="#simulador">Simulador</a>
     <a href="#traductor">Traductor</a>
     <a href="#frases">Frases</a>
     <a href="#cuaderno">Cuaderno</a>
-    <a href="#proingles">Inglés Pro</a>
   </div>
   <button class="btn-print" onclick="window.print()">&#8595; Guardar PDF</button>
 </div></nav>
@@ -354,8 +328,8 @@ section.block{padding:74px 0}
 <section class="block bridge"><div class="wrap"><p>La mayoría de los buenos trabajos remotos en dólares piden inglés, y ahí se cae mucha gente buena. Este profesor virtual te acompaña paso a paso: sabe tu nivel, te corrige sin juzgarte y te prepara para la entrevista y para el día a día. No necesitas pagar un profesor particular: lo tienes aquí, a demanda.</p></div></section>
 
 <section class="block" id="valor"><div class="wrap">
-  <div class="sec-head reveal"><span class="kicker kicker--gold">Por qué importa</span><h2>Por qué este bonus vale por sí solo</h2>
-    <p class="lead" style="max-width:660px;margin:14px auto 0;color:var(--mute);font-size:16px">No es relleno. Es la pieza que a mucha gente buena le falta para dar el salto al trabajo remoto en dólares: el inglés. Aquí lo tienes <b>incluido en tu acceso</b>, sin pagar nada aparte.</p>
+  <div class="sec-head reveal"><span class="kicker kicker--gold">El valor real</span><h2>Por qué este bonus vale por sí solo</h2>
+    <p class="lead" style="max-width:660px;margin:14px auto 0;color:var(--mute);font-size:16px">Por separado costaría más de <b style="color:var(--gold-d)">$2.400 USD</b>. Aquí va <b>incluido</b>, dentro del programa.</p>
   </div>
   <div class="vgrid">
     <div class="vcard reveal"><div class="vnum">01</div><h4>Un profesor particular, sin pagarlo</h4><p>Disponible 24/7, a tu nivel, infinitas veces. Lo que un profesor cobraría por hora, aquí lo tienes a demanda.</p></div>
@@ -365,20 +339,21 @@ section.block{padding:74px 0}
   </div>
   <div class="stack reveal">
     <div class="stack__ribbon">Incluido en tu acceso</div>
-    <h3 class="stack__title">Todo lo que tienes dentro</h3>
+    <h3 class="stack__title">Lo que tendrías que pagar por separado</h3>
     <ul class="stack__list">
-      <li><span>Test de nivel + certificado descargable</span><b>&#10003;</b></li>
-      <li><span>Profesor de inglés a demanda <em>(a tu nivel)</em></span><b>&#10003;</b></li>
-      <li><span>Simulador de entrevistas en inglés ilimitado</span><b>&#10003;</b></li>
-      <li><span>Práctica de pronunciación con reconocimiento de voz</span><b>&#10003;</b></li>
-      <li><span>Traducción + corrección de CV y carta al inglés profesional</span><b>&#10003;</b></li>
-      <li><span>Corrector que te enseña de tus fallos</span><b>&#10003;</b></li>
-      <li><span>Generador de ejercicios a tu nivel</span><b>&#10003;</b></li>
-      <li><span>Banco de frases con audio (acento US/UK)</span><b>&#10003;</b></li>
-      <li><span>Sistema de progreso y dominio</span><b>&#10003;</b></li>
-      <li><span>Cuaderno de fallos personal</span><b>&#10003;</b></li>
+      <li><span>Test de nivel + certificado descargable</span><b>$150</b></li>
+      <li><span>Profesor de inglés a demanda 24/7 <em>(a tu nivel)</em></span><b>$600</b></li>
+      <li><span>Simulador de entrevistas en inglés ilimitado</span><b>$400</b></li>
+      <li><span>Práctica de pronunciación y frases libres con reconocimiento de voz</span><b>$300</b></li>
+      <li><span>Traducción + corrección de CV y carta al inglés nativo</span><b>$250</b></li>
+      <li><span>Corrector que te enseña de tus fallos</span><b>$300</b></li>
+      <li><span>Generador de ejercicios infinitos a tu nivel</span><b>$200</b></li>
+      <li><span>Banco de frases con audio (acento US/UK)</span><b>$130</b></li>
+      <li><span>Sistema de progreso, rachas y dominio</span><b>$120</b></li>
+      <li><span>Cuaderno de fallos personal</span><b>$90</b></li>
     </ul>
-    <p class="stack__foot">Para que te hagas una idea: un profesor particular de inglés cobra entre <b>$15 y $25 USD la hora</b>, y un curso online de los buenos ronda los <b>$200&ndash;$400</b>. Esto lo tienes a demanda y sin límite de horas, <b>mientras seas miembro del programa</b>. Sin cuotas aparte, sin sorpresas.</p>
+    <div class="stack__total"><span>Valor real (USD)</span><div><s>$2,540</s><b>Incluido</b></div></div>
+    <p class="stack__foot">Un profesor particular de inglés cuesta <b>$15–25 USD la hora</b>. Aquí lo tienes a demanda, <b>ilimitado por todo el tiempo que estés en el programa</b>.</p>
   </div>
 </div></section>
 
@@ -390,18 +365,6 @@ section.block{padding:74px 0}
     <div class="how__step reveal"><div class="how__ic">3</div><h4>Practica con audio</h4><p>Escucha y repite las frases clave, y anota tus fallos para no repetirlos.</p></div>
   </div>
   <p class="howfoot reveal">Los prompts funcionan con <b>ChatGPT, Claude o Gemini</b>. El test, las frases y el cuaderno funcionan aquí mismo, sin nada más.</p>
-</div></section>
-
-<section class="block" id="plan"><div class="wrap">
-  <div class="sec-head reveal"><span class="kicker kicker--gold">Empieza aquí</span><h2>Tu plan, grano a grano</h2><p>No tienes que hacerlo todo hoy. Un paso pequeño al día durante 10 días: en cada uno te llevo a la herramienta que toca. Tu avance se guarda solo en este navegador.</p></div>
-  <div class="plan reveal">
-    <div class="plan__top">
-      <div class="plan__prog"><div class="plan__bar" id="planBar"></div></div>
-      <div class="plan__lbl" id="planLbl">0 de 10 días completados</div>
-    </div>
-    <div class="days" id="planDays"></div>
-    <div class="plan__done" id="planDone">&#127881; <b>Has completado los 10 días.</b> Ya tienes lo que necesitas: vuelve a las frases y al simulador siempre que quieras, y da el paso de agendar esa entrevista. El inglés se mantiene practicando un poco cada semana &mdash; de grano en grano.</div>
-  </div>
 </div></section>
 
 <section class="block" id="nivel"><div class="wrap">
@@ -426,15 +389,6 @@ section.block{padding:74px 0}
 
 <section class="block" id="prompts" style="background:var(--cream-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
   <div class="sec-head reveal"><span class="kicker kicker--gold">Paso 2</span><h2>Tu profesor de inglés con IA</h2><p>Copia el prompt, pégalo en ChatGPT, Claude o Gemini y empieza. Si ya hiciste el test, tu nivel se rellena solo.</p></div>
-  <details class="ia-guide reveal" style="max-width:640px;margin:0 auto 26px;background:var(--cream-2);border:1px solid var(--line);border-radius:14px;padding:4px 18px">
-    <summary style="cursor:pointer;font:600 15px 'Poppins';color:var(--brand);padding:14px 0;list-style:none">&#128172; ¿No has usado nunca ChatGPT? Ábrelo en 3 pasos &darr;</summary>
-    <ol style="margin:4px 0 16px;padding-left:20px;color:var(--ink);font-size:14.5px;line-height:1.7">
-      <li>Entra en <a href="https://chatgpt.com" target="_blank" rel="noopener" style="color:var(--gold-d);font-weight:600">chatgpt.com</a> (o <a href="https://claude.ai" target="_blank" rel="noopener" style="color:var(--gold-d);font-weight:600">claude.ai</a>). Es gratis para empezar.</li>
-      <li>Crea una cuenta con tu correo o tu cuenta de Google. Tarda un minuto.</li>
-      <li>Copia el prompt de aquí abajo, pégalo en la barra de mensaje, pulsa enviar y empieza a hablar con tu profesor.</li>
-    </ol>
-    <p style="margin:0 0 14px;font-size:13px;color:var(--mute)">No necesitas saber inglés para usarlo: le escribes en español y él te guía.</p>
-  </details>
   <div class="prompts">
       <article class="prompt" id="p_code1">
         <div class="prompt__head"><span class="prompt__num">&#9733;</span><div><span class="kicker kicker--gold">PROFESOR A TU NIVEL</span><h3>Profesor personal de inglés a tu medida</h3></div></div>
@@ -553,6 +507,132 @@ inglés de trabajo remoto.
   </div>
 </div></section>
 
+<section class="block" id="simulador"><div class="wrap">
+  <div class="sec-head reveal"><span class="kicker kicker--gold">Bonus interactivo</span><h2>Simulador de entrevista en ingl&eacute;s (por voz)</h2><p>El entrevistador te <b>habla</b> y te <b>escucha</b> en ingl&eacute;s. Elige acento <b>americano</b> o <b>brit&aacute;nico</b> y responde por micr&oacute;fono, como en una llamada real, hasta que deje de darte miedo.</p></div>
+
+  <style>
+  #simulador .sim-card{max-width:860px;margin:0 auto;background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+  #simulador .sim-pad{padding:24px}
+  #simulador .sim-setup{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:18px}
+  #simulador .sim-field label{display:block;font:600 12px/1 'Poppins';letter-spacing:.04em;color:var(--brand);text-transform:uppercase;margin-bottom:6px}
+  #simulador .sim-field select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;font:500 14px 'Poppins';color:var(--ink)}
+  #simulador .sim-go{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;border-radius:999px;padding:13px 26px;font:700 15px 'Poppins';color:#fff;background:linear-gradient(150deg,var(--brand),var(--green));box-shadow:0 12px 26px -12px rgba(21,121,43,.7)}
+  #simulador .sim-go:active{transform:translateY(1px)}
+  #simulador .sim-stage{display:none}
+  #simulador .sim-stage.on{display:block}
+  #simulador .sim-bar{height:6px;background:var(--line);border-radius:999px;overflow:hidden;margin-bottom:8px}
+  #simulador .sim-bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--brand));transition:width .4s ease}
+  #simulador .sim-step{font:600 12px 'Poppins';color:var(--mute);text-transform:uppercase;letter-spacing:.06em;margin:0 0 16px}
+  #simulador .sim-er{display:flex;gap:14px;align-items:flex-start;background:var(--cream-2);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  #simulador .sim-av{flex:0 0 46px;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-size:22px;background:linear-gradient(150deg,var(--deep2),var(--brand));color:#fff;position:relative}
+  #simulador .sim-av .dot{position:absolute;right:-2px;bottom:-2px;width:14px;height:14px;border-radius:50%;background:#bbb;border:2px solid var(--paper)}
+  #simulador .sim-av.speaking .dot{background:var(--green);animation:simPulse 1s infinite}
+  @keyframes simPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:.55}}
+  #simulador .sim-q{font-family:'Fraunces',serif;font-size:21px;line-height:1.4;color:var(--deep2);margin:2px 0 4px}
+  #simulador .sim-meta{font-size:12.5px;color:var(--mute)}
+  #simulador .sim-replay{margin-left:8px;border:1px solid var(--line);background:#fff;border-radius:8px;cursor:pointer;font-size:12px;padding:3px 9px;color:var(--brand)}
+  #simulador .sim-mic-wrap{text-align:center;margin:18px 0 4px}
+  #simulador .sim-mic{border:0;cursor:pointer;border-radius:999px;padding:15px 28px;font:700 15px 'Poppins';color:#fff;background:linear-gradient(150deg,var(--brand),var(--green));box-shadow:0 12px 26px -12px rgba(21,121,43,.7)}
+  #simulador .sim-mic.rec{background:linear-gradient(150deg,#b6321f,#d8492f);animation:simRec 1.2s infinite}
+  @keyframes simRec{0%,100%{box-shadow:0 0 0 0 rgba(216,73,47,.5)}50%{box-shadow:0 0 0 12px rgba(216,73,47,0)}}
+  #simulador .sim-live{min-height:20px;text-align:center;color:var(--mute);font-size:14px;font-style:italic;margin-top:8px}
+  #simulador .sim-ans{width:100%;min-height:90px;margin-top:12px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font:400 14.5px/1.6 'Poppins';color:var(--ink);resize:vertical;background:#fff}
+  #simulador .sim-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;margin-top:14px}
+  #simulador .sim-next{border:0;cursor:pointer;border-radius:999px;padding:12px 24px;font:700 14px 'Poppins';color:#fff;background:var(--deep2)}
+  #simulador .sim-skip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:12px 18px;font:600 13px 'Poppins';color:var(--mute);cursor:pointer}
+  #simulador .sim-note{font-size:13px;color:var(--gold-d);background:#fbf6e6;border:1px solid var(--gold-l);border-radius:10px;padding:10px 14px;margin:14px 0 0}
+  #simulador .sim-sum{display:none}
+  #simulador .sim-sum.on{display:block}
+  #simulador .sim-score{font-family:'Fraunces',serif;font-size:24px;color:var(--deep2);margin:0 0 4px;line-height:1.3}
+  #simulador .sim-checks{list-style:none;padding:0;margin:14px 0 0}
+  #simulador .sim-checks li{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:var(--ink)}
+  #simulador .sim-checks .ic{flex:0 0 20px;font-weight:700;font-size:16px}
+  #simulador .sim-checks .ok{color:var(--green)}
+  #simulador .sim-checks .no{color:var(--gold-d)}
+  #simulador .sim-sumbtns{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  #simulador .sim-b2{border:1px solid var(--line);background:#fff;border-radius:999px;padding:11px 20px;font:600 13.5px 'Poppins';color:var(--brand);cursor:pointer}
+  #simulador .sim-b1{border:0;background:linear-gradient(150deg,var(--brand),var(--green));color:#fff;border-radius:999px;padding:11px 22px;font:700 13.5px 'Poppins';cursor:pointer}
+  #simulador .sim-browser{display:flex;gap:11px;align-items:flex-start;background:#fbf6e6;border:1px solid var(--gold-l);border-radius:12px;padding:12px 15px;margin-bottom:18px;font-size:13.5px;line-height:1.5;color:var(--ink)}
+  #simulador .sim-browser .ic{flex:0 0 22px;font-size:18px;line-height:1.3}
+  #simulador .sim-browser b{color:var(--gold-d)}
+  @media(max-width:720px){#simulador .sim-setup{grid-template-columns:1fr}}
+  /* ===== Refuerzo motivacional "grano a grano" (aparece al completar una tarea) ===== */
+  .grano-cheer{position:fixed;left:50%;bottom:26px;transform:translate(-50%,150%);z-index:9999;max-width:430px;width:calc(100% - 32px);background:linear-gradient(150deg,var(--deep2),var(--deep));color:var(--cream);border:1px solid var(--gold-d);border-left:5px solid var(--gold);border-radius:14px;padding:14px 15px;box-shadow:0 16px 44px rgba(6,46,18,.32);display:flex;gap:12px;align-items:flex-start;opacity:0;pointer-events:none;transition:transform .45s cubic-bezier(.2,.85,.25,1),opacity .4s}
+  .grano-cheer.show{transform:translate(-50%,0);opacity:1;pointer-events:auto}
+  .grano-cheer .gc-ic{flex:0 0 30px;width:30px;height:30px;border-radius:50%;background:rgba(227,196,96,.16);border:1px solid var(--gold);display:grid;place-items:center;font-size:15px;margin-top:1px}
+  .grano-cheer .gc-tx{flex:1;font:500 13.6px/1.5 'Poppins',system-ui,sans-serif}
+  .grano-cheer .gc-tx b{color:var(--gold-l);font-weight:700}
+  .grano-cheer .gc-x{flex:0 0 auto;background:transparent;border:0;color:rgba(244,241,221,.55);font-size:19px;line-height:1;cursor:pointer;padding:0 2px;margin:-3px -2px 0 0}
+  .grano-cheer .gc-x:hover{color:var(--cream)}
+  @media(max-width:520px){.grano-cheer{bottom:16px}}
+  @media print{.grano-cheer{display:none!important}}
+  </style>
+
+  <div class="sim-card reveal">
+    <div class="sim-pad">
+      <div class="sim-browser">
+        <span class="ic">&#128187;</span>
+        <span>Este simulador de voz funciona con <b>Google Chrome</b> (en ordenador o Android). Si el micr&oacute;fono no te responde, <b>abre esta p&aacute;gina con Chrome</b> y pulsa <b>Permitir</b> cuando te pida el micr&oacute;fono. En Safari o iPhone puede que no capture la voz; en ese caso, responde por escrito.</span>
+      </div>
+      <div class="sim-setup" id="simSetup">
+        <div class="sim-field"><label>Acento</label>
+          <select id="simAcc"><option value="en-US">Ingl&eacute;s americano (US)</option><option value="en-GB">Ingl&eacute;s brit&aacute;nico (UK)</option></select></div>
+        <div class="sim-field"><label>Tipo de puesto</label>
+          <select id="simRole">
+            <option value="other">General / otro</option>
+            <option value="dev">Desarrollo / programaci&oacute;n</option>
+            <option value="design">Dise&ntilde;o</option>
+            <option value="marketing">Marketing digital</option>
+            <option value="va">Asistente virtual</option>
+            <option value="support">Atenci&oacute;n al cliente</option>
+            <option value="data">Etiquetado de datos / IA (Outlier, Appen...)</option>
+          </select></div>
+        <div class="sim-field"><label>Tu nivel</label>
+          <select id="simLevel"><option value="noexp">Sin experiencia</option><option value="junior">Junior</option><option value="exp">Con experiencia</option></select></div>
+      </div>
+      <div id="simStart" style="text-align:center">
+        <button class="sim-go" id="simGo">&#127908; Empezar la entrevista en ingl&eacute;s</button>
+        <p class="sim-meta" style="margin-top:10px" id="simSupport"></p>
+      </div>
+
+      <div class="sim-stage" id="simStage">
+        <div class="sim-bar"><span id="simBar"></span></div>
+        <p class="sim-step" id="simStep"></p>
+        <div class="sim-er">
+          <div class="sim-av" id="simAv">&#129333;<span class="dot"></span></div>
+          <div style="flex:1">
+            <div class="sim-q" id="simQ"></div>
+            <span class="sim-meta">El entrevistador<button class="sim-replay" id="simReplay" type="button">&#128266; Repetir</button></span>
+          </div>
+        </div>
+        <div class="sim-mic-wrap">
+          <button class="sim-mic" id="simMic" type="button">&#127908; Responder hablando</button>
+          <div class="sim-live" id="simLive"></div>
+        </div>
+        <textarea class="sim-ans" id="simAns" placeholder="Tu respuesta aparece aqu&iacute; al hablar. Tambi&eacute;n puedes escribirla."></textarea>
+        <div class="sim-note" id="simStageNote" style="display:none"></div>
+        <div class="sim-actions">
+          <button class="sim-skip" id="simReset" type="button">&#8634; Reiniciar</button>
+          <button class="sim-next" id="simNext" type="button">Siguiente pregunta &rarr;</button>
+        </div>
+      </div>
+
+      <div class="sim-sum" id="simSum">
+        <p class="sim-score" id="simScore"></p>
+        <p class="sim-meta" id="simScoreSub"></p>
+        <ul class="sim-checks" id="simCheckList"></ul>
+        <div class="sim-sumbtns">
+          <button class="sim-b1" id="simCopy" type="button">&#128203; Copiar mi entrevista</button>
+          <button class="sim-b2" id="simHarder" type="button">&#128293; Repetir m&aacute;s dif&iacute;cil</button>
+          <button class="sim-b2" id="simReset2" type="button">&#8634; Empezar de nuevo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sim-note" style="display:block;max-width:860px;margin:18px auto 0">&#8505;&#65039; &iquest;Quieres feedback escrito? Copia tu entrevista (bot&oacute;n de arriba) y p&eacute;gala bajo el prompt <b>&laquo;Simulador de entrevista en ingl&eacute;s&raquo;</b> de la secci&oacute;n de prompts, en ChatGPT, Claude o Gemini, para que te corrija.</div>
+</div></section>
+
 <section class="block" id="traductor" style="background:var(--cream-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
   <div class="sec-head reveal"><span class="kicker kicker--gold">Paso 2.5</span><h2>Traductor en los dos sentidos</h2><p>Pega lo que quieras &mdash; tu CV, una oferta, un correo, un mensaje &mdash; en <b>espa&ntilde;ol o en ingl&eacute;s</b>. Te preparo la traducci&oacute;n al otro idioma, te explico los t&eacute;rminos clave y, si est&aacute; en ingl&eacute;s, puedes <b>escucharlo</b>.</p></div>
   <div class="free reveal">
@@ -601,7 +681,7 @@ contexto de trabajo remoto internacional.
   <div class="tts-ctrl reveal"><span>Acento:</span><button data-acc="en-US" class="on">US</button><button data-acc="en-GB">UK</button><button id="slowBtn">&#128034; Lento</button></div>
   <div class="free reveal">
     <div class="free__h">&#127908; Practica TU frase (di lo que quieras)</div>
-    <div class="free__s">Escribe en inglés lo que quieres decir, óyela bien pronunciada y dila en voz alta: te marco palabra por palabra lo que se entendió. Para corregir la gramática, pulsa “Corregir con IA”.</div>
+    <div class="free__s">Escribe en inglés lo que quieres decir, óyela bien pronunciada, dila en voz alta y recibe tu puntuación. Para corregir la gramática, pulsa “Corregir con IA”.</div>
     <textarea id="freeTxt" placeholder="Ej: I would like to schedule a call to discuss the project next week"></textarea>
     <div class="free__btns">
       <button class="phr__btn" id="freeListen" title="Oír la pronunciación correcta">&#128266; Pronunciación</button>
@@ -638,58 +718,6 @@ contexto de trabajo remoto internacional.
       <li class="check" data-i="4"><button class="check__box" aria-label="marcar"></button><span class="check__txt">Repasé el banco de frases y sé pedir que repitan si no entiendo.</span></li>
       <li class="check" data-i="5"><button class="check__box" aria-label="marcar"></button><span class="check__txt">Probé mi cámara, micrófono y conexión con antelación.</span></li>
     </ul>
-  </div>
-</div></section>
-
-<section class="block" id="proingles" style="background:var(--cream-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
-  <div class="sec-head reveal"><span class="kicker kicker--gold">Ya tienes el trabajo</span><h2>Inglés impecable en tu día a día</h2><p>&iquest;Ya conseguiste el remoto? Ahora toca escribir y hablar inglés profesional sin errores. Pega cualquier texto, elige <b>inglés británico o americano</b>, y te preparo una versión de altísima calidad &mdash; con alternativas más formal e informal, los fallos marcados en español y, si lo vas a decir en voz alta, una mini-guía para pronunciarlo.</p></div>
-  <div class="free reveal">
-    <div class="free__h">&#127468;&#127463;&#127482;&#127480; Inglés británico o americano, nivel profesional</div>
-    <div class="free__s">1) Elige el inglés y el contexto. 2) Pega tu texto (en español o en inglés). 3) Pulsa &ldquo;Preparar&rdquo; y pégalo en ChatGPT, Claude o Gemini.</div>
-    <div class="tts-ctrl" style="margin:4px 0 10px">
-      <span>Inglés:</span>
-      <button data-var="us" class="on">&#127482;&#127480; Americano (US)</button>
-      <button data-var="gb">&#127468;&#127463; Británico (UK)</button>
-    </div>
-    <div class="tts-ctrl" style="margin:0 0 14px">
-      <span>Contexto:</span>
-      <button data-ctx="email" class="on">Correo</button>
-      <button data-ctx="chat">Chat de equipo</button>
-      <button data-ctx="spoken">Para decir en voz alta</button>
-      <button data-ctx="doc">Documento</button>
-    </div>
-    <textarea id="prTxt" placeholder="Pega aquí lo que quieras pasar a inglés profesional: un correo a tu jefe, un mensaje en Slack, lo que vas a decir en la reunión... En español o en inglés."></textarea>
-    <div class="free__btns">
-      <button class="btn-gold" id="prGo">&#128203; Preparar (inglés pro)</button>
-      <button class="phr__btn" id="prListen" title="Escuchar en el acento elegido">&#128266; Escuchar</button>
-    </div>
-    <div class="phr__fb" id="prFb" style="display:none"></div>
-  </div>
-  <div class="prompts" style="margin-top:26px">
-      <article class="prompt" id="p_code8">
-        <div class="prompt__head"><span class="prompt__num">&#9733;</span><div><span class="kicker kicker--gold">INGLÉS PRO EN EL TRABAJO</span><h3>Pule cualquier texto a inglés perfecto</h3></div></div>
-        <p class="prompt__why"><span class="why-mark">&#9733;</span> Para tu día a día ya trabajando: correos, mensajes de equipo, documentos o lo que vas a decir en una reunión, en inglés británico o americano impecable. El botón de arriba te lo arma solo; este es el prompt completo por si lo quieres a mano.</p>
-        <div class="codewrap"><div class="codebar"><span>COPIA Y PEGA &mdash; rellena lo que está entre [corchetes]</span><button class="copybtn" data-target="code8">Copiar prompt</button></div>
-        <pre id="code8" class="code">Actúa como editor y traductor nativo de inglés para un entorno
-de trabajo remoto internacional.
-
-=== AJUSTES ===
-- Variante de inglés: [Británico (UK) / Americano (US)]
-- Contexto: [correo / chat de equipo / lo voy a decir en voz alta / documento]
-- Registro: [formal / neutro / cercano]
-
-=== MI TEXTO ===
-[Pega aquí tu texto, en español o en inglés]
-
-=== TAREA ===
-1. Conviértelo en inglés impecable y natural de la variante elegida,
-   sin cambiar el sentido ni inventar datos.
-2. Dame una versión más formal y otra más informal.
-3. En español, márcame hasta 3 expresiones que suenen poco naturales
-   y cómo decirlas como un nativo.
-4. Si lo voy a decir en voz alta: dame una mini-guía de pronunciación
-   de las 3 palabras más difíciles.</pre></div>
-      </article>
   </div>
 </div></section>
 
@@ -797,31 +825,6 @@ var PHRASES=[
    {en:"What's the salary range for this position?",es:"¿Cuál es el rango salarial del puesto?"},
    {en:"I'm looking for a rate in the range of...",es:"Busco una tarifa en el rango de..."},
    {en:"Is the compensation in USD?",es:"¿La remuneración es en dólares?"}
- ]},
- {cat:"Stand-ups y mensajes async (Slack)",items:[
-   {en:"Quick update: I finished the task and pushed it for review.",es:"Actualización rápida: terminé la tarea y la dejé lista para revisión."},
-   {en:"I'm blocked on this — could you take a look when you have a moment?",es:"Estoy atascado con esto, ¿podrías echarle un vistazo cuando puedas?"},
-   {en:"Working on it now, I'll share an update by end of day.",es:"Estoy en ello, comparto una actualización antes de que acabe el día."},
-   {en:"Sounds good, I'll take care of it.",es:"Perfecto, yo me encargo."},
-   {en:"Just a heads-up: this might take a bit longer than expected.",es:"Solo para avisar: esto puede llevar algo más de lo previsto."}
- ]},
- {cat:"Tus primeros días (onboarding)",items:[
-   {en:"Where can I find the documentation for this?",es:"¿Dónde puedo encontrar la documentación de esto?"},
-   {en:"Who should I reach out to if I have questions?",es:"¿A quién debería escribir si tengo dudas?"},
-   {en:"I want to make sure I understand the priorities correctly.",es:"Quiero asegurarme de entender bien las prioridades."},
-   {en:"Thanks for the walkthrough, that was really helpful.",es:"Gracias por la explicación, me ha servido mucho."}
- ]},
- {cat:"Pedir que repitan sin quedar mal",items:[
-   {en:"Sorry, could you say that again more slowly?",es:"Perdona, ¿podrías repetirlo más despacio?"},
-   {en:"Just to make sure I understood — you mean...?",es:"Solo para confirmar que entendí: ¿quieres decir...?"},
-   {en:"Could you rephrase that, please?",es:"¿Podrías decirlo de otra forma, por favor?"},
-   {en:"I want to make sure I got that right.",es:"Quiero asegurarme de haberlo entendido bien."}
- ]},
- {cat:"Negociar tu tarifa",items:[
-   {en:"Based on my experience, I'd expect a rate around...",es:"Según mi experiencia, esperaría una tarifa en torno a..."},
-   {en:"Is there room to discuss the compensation?",es:"¿Hay margen para hablar de la remuneración?"},
-   {en:"That works for me. When could we start?",es:"Me parece bien. ¿Cuándo podríamos empezar?"},
-   {en:"Could we revisit the rate after a trial period?",es:"¿Podríamos revisar la tarifa tras un periodo de prueba?"}
  ]}
 ];
 var ACCENT='en-US',SLOW=false;
@@ -944,30 +947,13 @@ function scoreSpeech(target,heard){var t=norm(target),h={};norm(heard).forEach(f
 })();
 
 // ---- reveal ----
-(function(){
-  function revealAll(){document.querySelectorAll(".reveal:not(.in)").forEach(function(el){el.classList.add("in");});}
-  if(!("IntersectionObserver" in window)){revealAll();return;}
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.05,rootMargin:"0px 0px -4% 0px"});
-  document.querySelectorAll(".reveal").forEach(function(el){io.observe(el);});
-  function sweep(){var vh=window.innerHeight||document.documentElement.clientHeight;document.querySelectorAll(".reveal:not(.in)").forEach(function(el){if(el.getBoundingClientRect().top<vh){el.classList.add("in");io.unobserve(el);}});}
-  sweep();window.addEventListener("load",sweep);window.addEventListener("scroll",sweep,{passive:true});
-  setTimeout(revealAll,2500);
-})();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
 
 // ---- práctica libre (di lo que quieras) ----
 (function(){
   var ta=document.getElementById('freeTxt');if(!ta)return;
   var fb=document.getElementById('freeFb');
-  // Aviso si el navegador no soporta hablar/corregir por voz (app de Skool, Firefox, etc.)
-  if(!SR){
-    var sec=document.getElementById('frases');
-    if(sec){var head=sec.querySelector('.sec-head')||sec.querySelector('.wrap')||sec;
-      var note=document.createElement('div');
-      note.style.cssText="max-width:640px;margin:0 auto 22px;background:var(--cream-2);border:1px solid var(--gold-l);border-left:4px solid var(--gold);border-radius:12px;padding:14px 16px;font-size:14px;line-height:1.55;color:var(--ink)";
-      note.innerHTML='&#127908; <b>Para practicar tu pronunciaci\u00f3n en voz alta</b>, abre esta p\u00e1gina en <b>Google Chrome</b> (en el m\u00f3vil, el navegador Chrome; en el ordenador, Chrome o Edge). Tu navegador actual no permite el micrófono, pero <b>todo lo dem\u00e1s funciona perfectamente aqu\u00ed</b>: escuchar las frases, copiarlas y usar los prompts.';
-      if(head.nextSibling)head.parentNode.insertBefore(note,head.nextSibling);else head.parentNode.appendChild(note);
-    }
-  }
   function show(h,c){fb.style.display='';fb.style.color=c||'var(--mute)';fb.innerHTML=h;}
   var ls=document.getElementById('freeListen');if(ls)ls.onclick=function(){var t=ta.value.trim();if(!t){show('Escribe primero la frase en ingl\u00e9s.','var(--clay)');return;}speak(t);};
   var fx=document.getElementById('freeFix');if(fx)fx.onclick=function(){var t=ta.value.trim();if(!t){show('Escribe primero la frase a corregir.','var(--clay)');return;}
@@ -978,17 +964,13 @@ function scoreSpeech(target,heard){var t=norm(target),h={};norm(heard).forEach(f
     else mic.onclick=function(){var t=ta.value.trim();if(!t){show('Escribe primero la frase que quieres practicar.','var(--clay)');return;}
       var rec=new SR();rec.lang=ACCENT;rec.interimResults=false;rec.maxAlternatives=1;
       mic.classList.add('live');show('Escuchando... di la frase en voz alta','var(--mute)');
-      rec.onresult=function(ev){var heard=ev.results[0][0].transcript;
-        var hd={};norm(heard).forEach(function(x){hd[x]=1;});
-        var words=norm(t),matched=words.filter(function(w){return hd[w];}).length;
-        var pct=words.length?Math.round(matched/words.length*100):0;
-        var chips='<div class="wfb">'+words.map(function(w){return '<span class="'+(hd[w]?'ok':'miss')+'">'+w+'</span>';}).join('')+'</div>';
-        var head,col;
-        if(pct>=80){head='&#9989; <b>Se te entendió muy bien</b> ('+pct+'% de las palabras).';col='var(--brand)';}
-        else if(pct>=50){head='&#128077; <b>Vas bien</b> ('+pct+'%). Repite más despacio las que faltan.';col='var(--gold-d)';}
-        else{head='&#128257; <b>Reinténtalo</b> ('+pct+'%). Pulsa &#128266; para oír la pronunciación y copia el ritmo.';col='var(--clay)';}
-        show(head+'<span style="display:block;margin-top:5px;font-weight:400;color:var(--mute);font-size:12.5px">Esto comprueba si <b>se te entiende</b>, no califica tu acento. En verde, las palabras que se entendieron; en dorado, las que conviene repasar.</span>'+chips,col);
-        if(typeof PROG!=='undefined'&&PROG.touch)PROG.touch();};
+      rec.onresult=function(ev){var heard=ev.results[0][0].transcript,pct=Math.round(scoreSpeech(t,heard)*100);
+        var hd={};norm(heard).forEach(function(x){hd[x]=1;});var miss=norm(t).filter(function(w){return !hd[w];});
+        var tip=miss.length?(' \u00b7 a mejorar: '+miss.slice(0,6).join(', ')):'';
+        if(pct>=80)show('&#9989; \u00a1Muy bien! '+pct+'% \u00b7 te o\u00ed: \u201c'+heard+'\u201d'+tip,'var(--brand)');
+        else if(pct>=50)show('&#128077; Vas bien ('+pct+'%). Pulsa &#128266; para o\u00edrla y repite'+tip,'var(--gold-d)');
+        else show('&#128257; Reint\u00e9ntalo ('+pct+'%). Pulsa &#128266; para o\u00edr la pronunciaci\u00f3n correcta'+tip,'var(--clay)');
+        PROG.touch();};
       rec.onerror=function(){show('No te o\u00ed bien. Revisa el micr\u00f3fono e int\u00e9ntalo otra vez.','var(--clay)');};
       rec.onend=function(){mic.classList.remove('live');};
       try{rec.start();}catch(e){mic.classList.remove('live');}};
@@ -1028,88 +1010,235 @@ function scoreSpeech(target,heard){var t=norm(target),h={};norm(heard).forEach(f
     }
   })();
 })();
+</script>
 
-// ---- plan grano a grano ----
-var PLAN=[
- {t:"Mide tu nivel real",d:"Haz el test de 12 preguntas. Sabrás tu punto de partida (A1–C1) y todo lo demás se adapta a ti.",min:"2 min",go:"#nivel",label:"Hacer el test"},
- {t:"Activa tu profesor IA",d:"Copia el prompt “Profesor personal” y pégalo en ChatGPT, Claude o Gemini. Tendrás un profesor a tu medida, gratis.",min:"5 min",go:"#prompts",label:"Ir a los prompts"},
- {t:"Aprende 3 frases de entrevista",d:"Escúchalas, repítelas en voz alta y márcalas como dominadas. Empiezas a sumar racha.",min:"10 min",go:"#frases",label:"Ir a las frases"},
- {t:"Traduce tu CV al inglés",d:"Usa el prompt “CV en inglés” para tener una versión natural y apta para los filtros automáticos (ATS).",min:"15 min",go:"#prompts",label:"Ir a los prompts"},
- {t:"Primer simulacro de entrevista",d:"Lanza el simulador con IA y responde 5 preguntas. Anota en tu cuaderno lo que falles.",min:"15 min",go:"#prompts",label:"Ir al simulador"},
- {t:"Practica en voz alta",d:"En “Practica TU frase”, di 5 frases con el micro. No buscamos perfección: buscamos que se te entienda.",min:"10 min",go:"#frases",label:"Ir a practicar"},
- {t:"Entiende una oferta real",d:"Pega en el traductor una oferta de trabajo en inglés de verdad. Mira qué piden y qué responderías.",min:"10 min",go:"#traductor",label:"Ir al traductor"},
- {t:"Domina hablar de dinero",d:"Aprende a preguntar el rango salarial y a decir tu tarifa en dólares sin titubear.",min:"8 min",go:"#frases",label:"Ir a las frases"},
- {t:"Repasa tu cuaderno",d:"Vuelve a tus fallos anotados y corrígelos uno a uno. Lo que se repasa, no se vuelve a fallar.",min:"10 min",go:"#cuaderno",label:"Ir al cuaderno"},
- {t:"Listo para la entrevista",d:"Repasa el checklist final y da el paso de verdad: agenda o aplica a una entrevista esta semana.",min:"5 min",go:"#checklist",label:"Ir al checklist"}
-];
+<script>
+// ---- Simulador de entrevista por voz ----
 (function(){
-  var host=document.getElementById('planDays');if(!host)return;
-  var KEY='dgeg_en_plan',done={};
-  try{done=JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(e){done={};}
-  function save(){try{localStorage.setItem(KEY,JSON.stringify(done));}catch(e){}}
-  var bar=document.getElementById('planBar'),lbl=document.getElementById('planLbl'),doneBox=document.getElementById('planDone');
-  function upd(){var n=0;for(var k in done){if(done[k])n++;}
-    if(bar)bar.style.width=(n/PLAN.length*100)+'%';
-    if(lbl)lbl.textContent=(n>=PLAN.length)?'¡Plan completado! Los 10 días, hechos.':(n+' de '+PLAN.length+' días completados');
-    if(doneBox)doneBox.style.display=(n>=PLAN.length)?'block':'none';}
-  function card(p,i){
-    var el=document.createElement('div');el.className='day'+(done[i]?' done':'');
-    el.innerHTML='<span class="day__n">'+(i+1)+'</span>'+
-      '<span class="day__min">&#9201; '+p.min+'</span>'+
-      '<div class="day__t">'+p.t+'</div>'+
-      '<div class="day__d">'+p.d+'</div>'+
-      '<div class="day__row"><a class="day__go" href="'+p.go+'">'+p.label+' &rarr;</a>'+
-      '<span class="day__chk" role="button" tabindex="0"><span class="day__box"></span>Hecho</span></div>';
-    var chk=el.querySelector('.day__chk');
-    function toggle(){done[i]=!done[i];if(!done[i])delete done[i];el.classList.toggle('done',!!done[i]);save();upd();if(done[i]&&typeof PROG!=='undefined'&&PROG.touch)PROG.touch();}
-    chk.addEventListener('click',toggle);
-    chk.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}});
-    return el;
-  }
-  PLAN.forEach(function(p,i){host.appendChild(card(p,i));});
-  upd();
-})();
+  var root=document.getElementById('simulador'); if(!root) return;
+  var hasTTS=('speechSynthesis' in window);
+  var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  var hasSTT=!!SR;
 
-// ---- Ingl\u00e9s Pro (ya tienes el trabajo) ----
-(function(){
-  var variant='us', ctx='email';
-  document.querySelectorAll('#proingles [data-var]').forEach(function(b){
-    b.onclick=function(){document.querySelectorAll('#proingles [data-var]').forEach(function(x){x.classList.remove('on');});b.classList.add('on');variant=b.dataset.var;};
-  });
-  document.querySelectorAll('#proingles [data-ctx]').forEach(function(b){
-    b.onclick=function(){document.querySelectorAll('#proingles [data-ctx]').forEach(function(x){x.classList.remove('on');});b.classList.add('on');ctx=b.dataset.ctx;};
-  });
-  var ta=document.getElementById('prTxt'),fb=document.getElementById('prFb');
-  function pshow(msg,col){if(!fb)return;fb.style.display='block';fb.style.color=col||'var(--brand)';fb.innerHTML=msg;}
-  function buildPrompt(t){
-    var v=(variant==='gb')?'BRIT\u00c1NICO (UK)':'AMERICANO (US)';
-    var ctxMap={email:'un correo de trabajo profesional',chat:'un mensaje de chat de equipo (Slack/Teams), profesional pero cercano',spoken:'algo que voy a DECIR EN VOZ ALTA en una reuni\u00f3n o llamada',doc:'un documento o presentaci\u00f3n de trabajo'};
-    var c=ctxMap[ctx]||'una comunicaci\u00f3n de trabajo';
-    var head='Act\u00faa como editor y traductor nativo de ingl\u00e9s '+v+' para un entorno de trabajo remoto internacional. Convierte mi texto en ingl\u00e9s '+v+' impecable y natural para '+c+', sin cambiar el sentido ni inventar datos.';
-    var tasks='\n\n=== QU\u00c9 QUIERO ===\n1) La versi\u00f3n final lista para usar.\n2) Una variante un poco m\u00e1s formal y otra un poco m\u00e1s informal.\n3) En espa\u00f1ol, hasta 3 expresiones de mi original que sonar\u00edan poco naturales para un nativo y c\u00f3mo mejorarlas.';
-    if(ctx==='spoken'){tasks+='\n4) Como lo voy a decir en voz alta: una mini-gu\u00eda de pronunciaci\u00f3n de las 3 palabras o frases m\u00e1s dif\u00edciles (c\u00f3mo suenan, en simple).';}
-    return head+tasks+'\n\n=== MI TEXTO ===\n'+t;
-  }
-  var go=document.getElementById('prGo');
-  if(go)go.onclick=function(){
-    var t=(ta.value||'').trim();
-    if(!t){pshow('&#9888;&#65039; Pega primero el texto que quieres en ingl\u00e9s profesional.','var(--clay)');return;}
-    var p=buildPrompt(t);
-    navigator.clipboard.writeText(p).then(function(){
-      var et=(variant==='gb')?'ingl\u00e9s brit\u00e1nico':'ingl\u00e9s americano';
-      pshow('&#9989; Prompt copiado ('+et+'). P\u00e9galo en ChatGPT, Claude o Gemini y tendr\u00e1s tu texto en ingl\u00e9s impecable + versiones y mejoras.','var(--brand)');
-    }).catch(function(){pshow('Copia esto y p\u00e9galo en tu IA:<br><br>'+p.replace(/</g,'&lt;').replace(/\n/g,'<br>'),'var(--mute)');});
+  var Q={
+    es:{
+      greet:'Hola, gracias por conectarte. Soy tu entrevistador para este puesto remoto. Empecemos.',
+      base:['Para empezar, h\u00e1blame de ti y de tu experiencia.',
+            '\u00bfPor qu\u00e9 te interesa este puesto y por qu\u00e9 quieres trabajar en remoto?',
+            'Cu\u00e9ntame un logro del que te sientas orgulloso. \u00bfQu\u00e9 resultado tuvo?',
+            'Describe una situaci\u00f3n dif\u00edcil en el trabajo y c\u00f3mo la resolviste.',
+            '\u00bfC\u00f3mo organizas tu tiempo trabajando desde casa, quiz\u00e1 en otra zona horaria?',
+            '\u00bfQu\u00e9 herramientas de trabajo remoto manejas, como Zoom, Slack o un gestor de tareas?',
+            '\u00bfCu\u00e1l es tu expectativa salarial al mes, en d\u00f3lares?',
+            'Para terminar, \u00bftienes alguna pregunta para m\u00ed?'],
+      noexp:'Si no tienes experiencia directa, \u00bfqu\u00e9 habilidades de otras \u00e1reas de tu vida te servir\u00edan para este puesto?',
+      hard:['Vamos a apretar: \u00bfcu\u00e1l dir\u00edas que es tu mayor debilidad y qu\u00e9 haces para mejorarla?',
+            'Cu\u00e9ntame una vez que te equivocaste de verdad. \u00bfQu\u00e9 aprendiste?'],
+      roles:{
+        dev:['Cu\u00e9ntame un proyecto que hayas construido de principio a fin. \u00bfQu\u00e9 fue lo m\u00e1s dif\u00edcil?','Cuando aparece un error que no entiendes, \u00bfc\u00f3mo lo investigas paso a paso?'],
+        design:['Ens\u00e9\u00f1ame c\u00f3mo abordas un encargo de dise\u00f1o desde cero.','\u00bfC\u00f3mo reaccionas cuando un cliente rechaza tu propuesta?'],
+        marketing:['\u00bfC\u00f3mo medir\u00edas si una campa\u00f1a ha funcionado de verdad?','Cu\u00e9ntame una acci\u00f3n de marketing que no funcion\u00f3 y qu\u00e9 aprendiste.'],
+        va:['Tu jefe te pide tres cosas urgentes a la vez. \u00bfC\u00f3mo decides qu\u00e9 haces primero?','\u00bfQu\u00e9 haces cuando una instrucci\u00f3n no te queda clara?'],
+        support:['\u00bfC\u00f3mo tratas a un cliente enfadado que, adem\u00e1s, tiene raz\u00f3n?','Cu\u00e9ntame una vez que convertiste una queja en un cliente contento.'],
+        data:['\u00bfC\u00f3mo mantienes la calidad y la coherencia etiquetando datos durante horas?','Cuando una instrucci\u00f3n de etiquetado es ambigua, \u00bfqu\u00e9 haces?'],
+        other:['\u00bfQu\u00e9 te hace el candidato ideal para este puesto?','\u00bfQu\u00e9 te gustar\u00eda haber aprendido dentro de seis meses?']
+      }
+    },
+    en:{
+      greet:'Hi, thanks for joining. I am your interviewer for this remote role. Let us begin.',
+      base:['To start, tell me about yourself and your experience.',
+            'Why are you interested in this role, and why do you want to work remotely?',
+            'Tell me about an achievement you are proud of. What was the result?',
+            'Describe a difficult situation at work and how you solved it.',
+            'How do you organize your time working from home, maybe in another time zone?',
+            'Which remote-work tools do you use, such as Zoom, Slack or a task manager?',
+            'What is your monthly salary expectation, in US dollars?',
+            'Finally, do you have any questions for me?'],
+      noexp:'If you have no direct experience, which skills from other areas of your life would help you in this role?',
+      hard:['Let us push a bit: what would you say is your biggest weakness, and what do you do about it?',
+            'Tell me about a time you really got something wrong. What did you learn?'],
+      roles:{
+        dev:['Walk me through a project you built end to end. What was the hardest part?','When you hit a bug you do not understand, how do you investigate it step by step?'],
+        design:['Show me how you approach a design brief from scratch.','How do you react when a client rejects your proposal?'],
+        marketing:['How would you measure whether a campaign actually worked?','Tell me about a marketing effort that failed and what you learned.'],
+        va:['Your manager asks for three urgent things at once. How do you decide what to do first?','What do you do when an instruction is not clear?'],
+        support:['How do you handle an angry customer who is also right?','Tell me about a time you turned a complaint into a happy customer.'],
+        data:['How do you keep quality and consistency labeling data for hours?','When a labeling instruction is ambiguous, what do you do?'],
+        other:['What makes you the ideal candidate for this role?','What would you like to have learned six months from now?']
+      }
+    }
   };
-  var lis=document.getElementById('prListen');
-  if(lis){
-    if(!('speechSynthesis' in window)){lis.style.display='none';}
-    else lis.onclick=function(){
-      var t=(ta.value||'').trim();
-      if(!t){pshow('Escribe o pega primero el texto en ingl\u00e9s que quieres o\u00edr.','var(--clay)');return;}
-      try{var u=new SpeechSynthesisUtterance(t);u.lang=(variant==='gb')?'en-GB':'en-US';u.rate=.92;speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}
-      pshow('&#128266; Reproduciendo en '+((variant==='gb')?'ingl\u00e9s brit\u00e1nico':'ingl\u00e9s americano')+'. (Si tu texto est\u00e1 en espa\u00f1ol la pronunciaci\u00f3n no ser\u00e1 correcta &mdash; escucha la versi\u00f3n en ingl\u00e9s que te d\u00e9 la IA.)','var(--mute)');
-    };
+
+  var state={lang:'en',acc:'en-US',list:[],idx:0,ans:[]};
+
+  var voices=[];
+  function loadVoices(){ if(hasTTS){ try{voices=speechSynthesis.getVoices()||[];}catch(e){voices=[];} } }
+  if(hasTTS){ loadVoices(); try{speechSynthesis.onvoiceschanged=loadVoices;}catch(e){} }
+  function pickVoice(acc){ acc=(acc||'en-US').toLowerCase(); var i; for(i=0;i<voices.length;i++){ if(voices[i].lang&&voices[i].lang.toLowerCase()===acc) return voices[i]; } for(i=0;i<voices.length;i++){ if(voices[i].lang&&voices[i].lang.toLowerCase().indexOf('en')===0) return voices[i]; } return null; }
+
+  var av=document.getElementById('simAv');
+  function speak(t){
+    if(!hasTTS) return;
+    try{
+      speechSynthesis.cancel();
+      var u=new SpeechSynthesisUtterance(t);
+      var v=pickVoice(state.acc); if(v)u.voice=v;
+      u.lang=state.acc||'en-US'; u.rate=.97; u.pitch=1;
+      u.onstart=function(){ if(av)av.classList.add('speaking'); };
+      u.onend=function(){ if(av)av.classList.remove('speaking'); };
+      speechSynthesis.speak(u);
+    }catch(e){}
   }
+
+  var elGo=document.getElementById('simGo'),
+      elSetup=document.getElementById('simSetup'),
+      elStartWrap=document.getElementById('simStart'),
+      elStage=document.getElementById('simStage'),
+      elSum=document.getElementById('simSum'),
+      elQ=document.getElementById('simQ'),
+      elStep=document.getElementById('simStep'),
+      elBar=document.getElementById('simBar'),
+      elMic=document.getElementById('simMic'),
+      elLive=document.getElementById('simLive'),
+      elAns=document.getElementById('simAns'),
+      elNext=document.getElementById('simNext'),
+      elReplay=document.getElementById('simReplay'),
+      elSupport=document.getElementById('simSupport'),
+      elStageNote=document.getElementById('simStageNote');
+
+  (function(){
+    var msg='';
+    if(hasTTS&&hasSTT) msg='Tu navegador permite voz y micr\u00f3fono. Para mejor resultado, usa Chrome (m\u00f3vil u ordenador).';
+    else if(hasTTS&&!hasSTT) msg='El entrevistador podr\u00e1 hablarte, pero tu navegador no captura el micr\u00f3fono: responde por escrito. (El micr\u00f3fono va mejor en Chrome.)';
+    else if(!hasTTS&&hasSTT) msg='Podr\u00e1s responder por voz, pero tu navegador no lee en alto: lee la pregunta en pantalla.';
+    else msg='Tu navegador no permite voz ni micr\u00f3fono. Funciona igual por escrito; o usa el prompt de abajo en una app de IA con voz.';
+    if(elSupport)elSupport.textContent=msg;
+  })();
+
+  function build(lang,role,level,harder){
+    var q=Q[lang], r=q.roles[role]||q.roles.other, list=[];
+    list.push(q.base[0]); list.push(q.base[1]); list.push(r[0]); list.push(q.base[2]); list.push(r[1]); list.push(q.base[3]);
+    if(level==='noexp') list.push(q.noexp);
+    list.push(q.base[4]); list.push(q.base[5]);
+    if(harder){ list.push(q.hard[0]); list.push(q.hard[1]); }
+    list.push(q.base[6]); list.push(q.base[7]);
+    return list;
+  }
+
+  function show(i){
+    state.idx=i; var q=state.list[i];
+    elQ.textContent=q;
+    elStep.textContent=(state.lang==='es'?'Pregunta ':'Question ')+(i+1)+(state.lang==='es'?' de ':' of ')+state.list.length;
+    elBar.style.width=Math.round(i/state.list.length*100)+'%';
+    elAns.value=''; elLive.textContent=''; elStageNote.style.display='none';
+    elNext.textContent=(i===state.list.length-1)?(state.lang==='es'?'Terminar y ver resumen \u2713':'Finish and see summary \u2713'):(state.lang==='es'?'Siguiente pregunta \u2192':'Next question \u2192');
+    speak(q);
+  }
+
+  var rec=null, listening=false;
+  function setMic(on){
+    listening=on; elMic.classList.toggle('rec',on);
+    elMic.innerHTML=on?(state.lang==='es'?'&#9632; Detener':'&#9632; Stop'):(state.lang==='es'?'&#127908; Responder hablando':'&#127908; Answer by voice');
+  }
+  function note(t){ elStageNote.textContent=t; elStageNote.style.display='block'; }
+  function startMic(){
+    if(!hasSTT){ note(state.lang==='es'?'Tu navegador no captura micr\u00f3fono aqu\u00ed. Responde por escrito (el micr\u00f3fono va mejor en Chrome).':'No mic capture here. Type your answer (the mic works best in Chrome).'); return; }
+    if(window.isSecureContext===false){ note(state.lang==='es'?'El micr\u00f3fono solo funciona en la versi\u00f3n web segura (https). Abre la p\u00e1gina por su enlace https, no el archivo local.':'The mic only works on the secure (https) version. Open the page via its https link, not the local file.'); return; }
+    try{ if(hasTTS) speechSynthesis.cancel(); if(av)av.classList.remove('speaking'); }catch(e){}
+    if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia){
+      navigator.mediaDevices.getUserMedia({audio:true}).then(function(stream){ try{stream.getTracks().forEach(function(t){t.stop();});}catch(e){} setTimeout(_beginRec,200); }).catch(function(err){ var n=(err&&err.name)||'error'; note(state.lang==='es'?('El navegador bloque\u00f3 el micr\u00f3fono ('+n+'). Toca el candado junto a la direcci\u00f3n web, permite el micr\u00f3fono y vuelve a pulsar para hablar \u2014 o responde por escrito.'):('The browser blocked the microphone ('+n+'). Tap the lock next to the address bar, allow the mic and tap to talk again \u2014 or type your answer.')); });
+      return;
+    }
+    _beginRec();
+  }
+  function _beginRec(){
+    try{
+      rec=new SR(); rec.lang=state.acc||'en-US'; rec.interimResults=true; rec.continuous=true; rec.maxAlternatives=1;
+      var finalT=elAns.value?elAns.value+' ':'';
+      rec.onresult=function(e){ var interim=''; for(var k=e.resultIndex;k<e.results.length;k++){ var tr=e.results[k][0].transcript; if(e.results[k].isFinal) finalT+=tr+' '; else interim+=tr; } elAns.value=(finalT+interim).replace(/\s+/g,' ').replace(/^\s+/,''); elLive.textContent=interim?('\u2026 '+interim):''; };
+      rec.onerror=function(ev){ setMic(false); var er=(ev&&ev.error)||''; var m; if(state.lang==='es'){ m=(er==='not-allowed'||er==='service-not-allowed')?'El micr\u00f3fono est\u00e1 bloqueado. Toca el candado junto a la direcci\u00f3n web y permite el micr\u00f3fono, luego vuelve a pulsar.':(er==='no-speech')?'No te o\u00ed nada. Acerca el micro y vuelve a pulsar para hablar.':(er==='audio-capture')?'No detecto ning\u00fan micr\u00f3fono en el equipo. Conecta uno o responde por escrito.':(er==='network')?'Fallo de red (este micro necesita internet). Revisa tu conexi\u00f3n e int\u00e9ntalo otra vez.':('No pude usar el micr\u00f3fono ('+er+'). Responde por escrito.'); } else { m=(er==='not-allowed'||er==='service-not-allowed')?'The microphone is blocked. Tap the lock by the address bar, allow the mic, then tap again.':(er==='no-speech')?'I did not hear anything. Move closer and tap to talk again.':(er==='audio-capture')?'No microphone detected. Connect one or type your answer.':(er==='network')?'Network error (this mic needs the internet). Check your connection and retry.':('Could not use the microphone ('+er+'). Type your answer.'); } note(m); };
+      rec.onend=function(){ setMic(false); elLive.textContent=''; };
+      rec.start(); setMic(true);
+    }catch(e){ setMic(false); note(state.lang==='es'?'Tu navegador bloque\u00f3 el micr\u00f3fono. Responde por escrito.':'Your browser blocked the microphone. Type your answer.'); }
+  }
+  function stopMic(){ if(rec){ try{rec.stop();}catch(e){} } setMic(false); }
+
+  elMic.addEventListener('click',function(){ if(!hasSTT){ note(state.lang==='es'?'Tu navegador no captura micr\u00f3fono. Responde por escrito (o usa Chrome).':'No microphone capture here. Type your answer (or use Chrome).'); return;} listening?stopMic():startMic(); });
+  if(!hasSTT){ elMic.style.opacity=.55; }
+  elReplay.addEventListener('click',function(){ speak(state.list[state.idx]); });
+
+  function start(harder){
+    state.lang='en'; state.acc=(document.getElementById('simAcc')||{}).value||'en-US';
+    var role=document.getElementById('simRole').value, level=document.getElementById('simLevel').value;
+    state.list=build(state.lang,role,level,harder); state.idx=0; state.ans=[];
+    elSetup.style.display='none'; elStartWrap.style.display='none'; elSum.classList.remove('on'); elStage.classList.add('on');
+    elAns.placeholder=state.lang==='es'?'Tu respuesta aparece aqu\u00ed al hablar. Tambi\u00e9n puedes escribirla.':'Your answer appears here as you speak. You can also type it.';
+    speak(Q[state.lang].greet);
+    setTimeout(function(){ show(0); }, hasTTS?2600:0);
+  }
+  elGo.addEventListener('click',function(){ start(false); });
+
+  elNext.addEventListener('click',function(){
+    stopMic();
+    state.ans[state.idx]={q:state.list[state.idx],a:elAns.value.trim()};
+    if(state.idx>=state.list.length-1) finish(); else show(state.idx+1);
+  });
+
+  function reset(){
+    stopMic(); try{if(hasTTS)speechSynthesis.cancel();}catch(e){}
+    elStage.classList.remove('on'); elSum.classList.remove('on');
+    elSetup.style.display=''; elStartWrap.style.display=''; elStageNote.style.display='none'; elStageNote.textContent='';
+  }
+  document.getElementById('simReset').addEventListener('click',reset);
+  document.getElementById('simReset2').addEventListener('click',reset);
+  document.getElementById('simHarder').addEventListener('click',function(){ elSum.classList.remove('on'); start(true); });
+
+  function finish(){
+    stopMic(); try{if(hasTTS)speechSynthesis.cancel();}catch(e){}
+    elStage.classList.remove('on'); elSum.classList.add('on'); elBar.style.width='100%';
+    var es=state.lang==='es';
+    var ans=state.ans.filter(function(x){return x&&x.a;});
+    var joined=ans.map(function(x){return x.a;}).join(' ');
+    var salaryItem=null; for(var i=0;i<state.ans.length;i++){var x=state.ans[i]; if(x&&/salario|expectativa|salary|d[o\u00f3]lares|dollar|usd/i.test(x.q)){salaryItem=x;break;}}
+    var lastItem=state.ans[state.list.length-1];
+    var checks=[];
+    checks.push([ ans.length>=Math.ceil(state.list.length*0.7),
+      es?'Respondiste a (casi) todas las preguntas.':'You answered (almost) every question.',
+      es?'No dejes preguntas en blanco: aunque dudes, di algo.':'Do not leave questions blank: say something even if unsure.']);
+    checks.push([ ans.some(function(x){return x.a.length>140;})||/por ejemplo|for example/i.test(joined),
+      es?'Diste al menos una respuesta con detalle o un ejemplo.':'You gave at least one detailed answer or example.',
+      es?'Cuenta una situaci\u00f3n concreta, no solo "soy responsable".':'Tell a concrete story, not just "I am responsible".']);
+    checks.push([ /\d/.test(joined),
+      es?'Usaste alg\u00fan dato o n\u00famero.':'You used a fact or a number.',
+      es?'Los n\u00fameros convencen: "reduje X un 30%", "gestion\u00e9 5 clientes".':'Numbers convince: "cut X by 30%", "handled 5 clients".']);
+    checks.push([ salaryItem && /\d/.test(salaryItem.a),
+      es?'Diste una cifra de salario en d\u00f3lares.':'You stated a salary figure in dollars.',
+      es?'Ensaya tu cifra en USD antes de la entrevista real.':'Rehearse your USD figure before the real interview.']);
+    checks.push([ lastItem && lastItem.a.length>0,
+      es?'Preparaste una pregunta para el entrevistador.':'You prepared a question for the interviewer.',
+      es?'Lleva 1-2 preguntas: demuestra inter\u00e9s.':'Bring 1-2 questions: it shows interest.']);
+    var score=checks.filter(function(c){return c[0];}).length;
+    document.getElementById('simScore').textContent=(es?'Practicaste ':'You practised ')+state.list.length+(es?(' preguntas \u2014 '+score+' de 5 buenas pr\u00e1cticas \u2713'):(' questions \u2014 '+score+' of 5 good practices \u2713'));
+    document.getElementById('simScoreSub').textContent=es?'Esto NO es una nota: es una gu\u00eda r\u00e1pida para tu pr\u00f3xima ronda. Repite hasta que las cinco salgan solas.':'This is NOT a grade: it is a quick guide for your next round. Repeat until all five come naturally.';
+    var ul=document.getElementById('simCheckList'); ul.innerHTML='';
+    checks.forEach(function(c){ var li=document.createElement('li'); li.innerHTML='<span class="ic '+(c[0]?'ok':'no')+'">'+(c[0]?'\u2713':'\u2022')+'</span><span><b>'+c[1]+'</b><br><span class="sim-meta">'+(c[0]?(es?'\u00a1Bien!':'Nice!'):c[2])+'</span></span>'; ul.appendChild(li); });
+  }
+
+  document.getElementById('simCopy').addEventListener('click',function(){
+    var es=state.lang==='es', btn=this;
+    var lines=[es?'MI ENTREVISTA SIMULADA \u2014 De Grano En Grano':'MY MOCK INTERVIEW \u2014 De Grano En Grano',''];
+    state.ans.forEach(function(x,i){ if(!x)return; lines.push((es?'P':'Q')+(i+1)+': '+x.q); lines.push((es?'R':'A')+': '+(x.a||(es?'(sin responder)':'(no answer)'))); lines.push(''); });
+    lines.push(es?'\u2014 Pega esto bajo el prompt de feedback para que la IA me corrija.':'\u2014 Paste this under the feedback prompt so the AI can review it.');
+    var txt=lines.join('\n');
+    function ok(){ btn.innerHTML=es?'\u00a1Copiado! \u2713':'Copied! \u2713'; setTimeout(function(){ btn.innerHTML=es?'&#128203; Copiar mi entrevista':'&#128203; Copy my interview'; },1700); }
+    function legacyCopy(t){ try{ var ta=document.createElement('textarea'); ta.value=t; ta.setAttribute('readonly',''); ta.style.position='fixed'; ta.style.top='-1000px'; ta.style.opacity='0'; document.body.appendChild(ta); ta.focus(); ta.select(); try{ta.setSelectionRange(0,t.length);}catch(e){} var done=false; try{done=document.execCommand('copy');}catch(e){done=false;} document.body.removeChild(ta); return done; }catch(e){ return false; } }
+    function manual(t){ try{ window.prompt(es?'Copia tu entrevista con Ctrl/Cmd+C y pulsa Aceptar:':'Copy your interview with Ctrl/Cmd+C and press OK:', t); }catch(e){} btn.innerHTML=es?'Selecci\u00f3nala y c\u00f3piala \u2191':'Select and copy \u2191'; setTimeout(function(){ btn.innerHTML=es?'&#128203; Copiar mi entrevista':'&#128203; Copy my interview'; },2500); }
+    try{
+      if(navigator.clipboard && window.isSecureContext){
+        navigator.clipboard.writeText(txt).then(ok).catch(function(){ if(legacyCopy(txt)) ok(); else manual(txt); });
+      } else if(legacyCopy(txt)){ ok(); } else { manual(txt); }
+    }catch(e){ if(legacyCopy(txt)) ok(); else manual(txt); }
+  });
 })();
 
 </script>
